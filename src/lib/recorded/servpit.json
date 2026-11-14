@@ -1,0 +1,379 @@
+{
+  "repo": {
+    "owner": "iam25th1",
+    "repo": "servpit",
+    "url": "https://github.com/iam25th1/servpit",
+    "headSha": "701492767b218ea64b8aa5eec514b7cb17db8f8b",
+    "description": "Headless slot reel battle royale round resolver"
+  },
+  "ruleset": {
+    "id": "serv-01",
+    "name": "SERV Hackathon, Edition 01",
+    "start": "2026-09-14T00:00:00Z",
+    "end": "2026-09-28T23:59:59Z"
+  },
+  "declared": "unstated",
+  "checkedAt": "2026-11-14T11:40:53.179Z",
+  "rules": [
+    {
+      "id": "public",
+      "label": "Public repo",
+      "status": "pass",
+      "note": "Anyone can open it. No license file was detected.",
+      "evidence": [
+        {
+          "label": "iam25th1/servpit",
+          "url": "https://github.com/iam25th1/servpit"
+        }
+      ]
+    },
+    {
+      "id": "window",
+      "label": "Built in the window",
+      "rule": "September 14 to 28, 2026.",
+      "status": "warn",
+      "note": "All 220 commits up to the deadline are dated inside the window. First commit Sep 20, 2026, last Sep 30, 2026. 12 commits are dated after the deadline, so the repo is not the version that was submitted.",
+      "evidence": [
+        {
+          "label": "Commits inside the window",
+          "url": "https://github.com/iam25th1/servpit/commits?since=2026-09-14&until=2026-09-28"
+        },
+        {
+          "label": "Repo created on GitHub: Sep 20, 2026",
+          "detail": "Set by GitHub. It cannot be backdated."
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "label": "Uses SERV Reasoning",
+      "rule": "Built on SERV Reasoning.",
+      "status": "pass",
+      "note": "Call sites found in 4 source files.",
+      "evidence": [
+        {
+          "label": "src/config/serv.ts:93",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/config/serv.ts#L93",
+          "detail": "baseUrl: \"https://inference-api.openserv.ai/v1\","
+        },
+        {
+          "label": "src/server/serv/client.test.ts:38",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/server/serv/client.test.ts#L38",
+          "detail": "expect(toolNames).toEqual([\"serv_prompt_guard\", \"serv_shadow_agent\"]);"
+        },
+        {
+          "label": "src/server/serv/client.ts:7",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/server/serv/client.ts#L7",
+          "detail": "//   tools        serv_prompt_guard (no parameters) and serv_shadow_agent"
+        },
+        {
+          "label": "src/config/serv.test.ts:41",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/config/serv.test.ts#L41",
+          "detail": "expect(servModelId({ ...DEFAULT_SERV, features: { ...DEFAULT_SERV.features, kronos: true } })).toBe(\"claude-haiku-4.5-serv-multipath-serv-kronos\");"
+        }
+      ]
+    },
+    {
+      "id": "demo",
+      "label": "Demo link or video",
+      "status": "pass",
+      "note": "The link answers. This shows a page is up, not that the product works.",
+      "evidence": [
+        {
+          "label": "servpit.25th.dev/",
+          "url": "https://servpit.25th.dev/",
+          "detail": "A page answered."
+        }
+      ]
+    },
+    {
+      "id": "writeup",
+      "label": "Write-up covers what was asked",
+      "status": "pass",
+      "note": "Names its track (Open) and says how it uses SERV Reasoning.",
+      "evidence": []
+    },
+    {
+      "id": "secrets",
+      "label": "No secrets committed",
+      "status": "pass",
+      "note": "No key-shaped strings or filled .env files were found.",
+      "evidence": []
+    },
+    {
+      "id": "reviewer",
+      "label": "Written for people, not for an AI judge",
+      "status": "pass",
+      "note": "Nothing addressed to an automated reviewer was found.",
+      "evidence": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "quote": "`SERV Reasoning` · `Coinbase AgentKit` · `Base Sepolia` · `Next.js` · `1724 tests`",
+      "kind": "test_count",
+      "number": 1724,
+      "subject": "tests",
+      "url": null,
+      "searchTerms": [],
+      "status": "verified",
+      "note": "Claims 1724. Found about 1696 test cases in 164 files, counted by pattern.",
+      "evidence": [
+        {
+          "label": "src/server/decisions/decide.test.ts (57)",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/server/decisions/decide.test.ts"
+        },
+        {
+          "label": "src/economy/rules.test.ts (44)",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/economy/rules.test.ts"
+        },
+        {
+          "label": "src/server/round/bankFlag.test.ts (39)",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/server/round/bankFlag.test.ts"
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c2",
+      "quote": "**Play it:** https://servpit.25th.dev",
+      "kind": "live_link",
+      "number": null,
+      "subject": null,
+      "url": "https://servpit.25th.dev",
+      "searchTerms": [],
+      "status": "verified",
+      "note": "A page answered at that address when checked. That shows it is up, not that it works.",
+      "evidence": [
+        {
+          "label": "servpit.25th.dev/",
+          "url": "https://servpit.25th.dev/",
+          "detail": "A page answered."
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c6",
+      "quote": "Every round each one decides, through SERV Reasoning, whether to spend its chips on a seat in the pit, borrow from a lender that is itself an agent, or hold.",
+      "kind": "uses_tech",
+      "number": null,
+      "subject": "decides through SERV Reasoning",
+      "url": null,
+      "searchTerms": [
+        "SERV",
+        "Reasoning",
+        "agent",
+        "lender"
+      ],
+      "status": "verified",
+      "note": "Call sites for SERV Reasoning are in the source.",
+      "evidence": [
+        {
+          "label": "src/config/serv.ts:93",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/config/serv.ts#L93",
+          "detail": "baseUrl: \"https://inference-api.openserv.ai/v1\","
+        },
+        {
+          "label": "src/server/serv/client.test.ts:38",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/server/serv/client.test.ts#L38",
+          "detail": "expect(toolNames).toEqual([\"serv_prompt_guard\", \"serv_shadow_agent\"]);"
+        },
+        {
+          "label": "src/server/serv/client.ts:7",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/server/serv/client.ts#L7",
+          "detail": "//   tools        serv_prompt_guard (no parameters) and serv_shadow_agent"
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c5",
+      "quote": "the money moves through AgentKit's `ViemWalletProvider` on Base Sepolia.",
+      "kind": "uses_tech",
+      "number": null,
+      "subject": "money moves",
+      "url": null,
+      "searchTerms": [
+        "AgentKit",
+        "ViemWalletProvider",
+        "Base",
+        "Sepolia"
+      ],
+      "status": "unverified",
+      "note": "The reader pointed at a comment or a line of text, not at code that does this, so its answer was thrown out.",
+      "evidence": [
+        {
+          "label": "src/server/wallets/viem.ts:5",
+          "url": "https://github.com/iam25th1/servpit/blob/701492767b218ea64b8aa5eec514b7cb17db8f8b/src/server/wallets/viem.ts#L5",
+          "detail": "// AgentKit still owns the wallet: this module builds the viem client and hands"
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c10",
+      "quote": "A worker plays a round every interval, the house pulls the lever, and everybody watching sees the same round at the same moment.",
+      "kind": "feature",
+      "number": null,
+      "subject": "autonomous rounds",
+      "url": null,
+      "searchTerms": [
+        "worker",
+        "interval",
+        "lever",
+        "round"
+      ],
+      "status": "unverified",
+      "note": "The code mentions this, but no line was found that shows it being done.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c3",
+      "quote": "This is an **Open Track** submission.",
+      "kind": "other",
+      "number": null,
+      "subject": null,
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "Not something a repo can show.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c4",
+      "quote": "six agents hold real wallets on Base Sepolia.",
+      "kind": "other",
+      "number": 6,
+      "subject": "agents",
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "Not something a repo can show.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c7",
+      "quote": "A house bot wins most rounds, since 18 of the 24 seats are the house's, so a take with an agent winning can take several captures.",
+      "kind": "number",
+      "number": 18,
+      "subject": "seats of 24",
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "A stated figure. A repo cannot prove it. Ask for the run that produced it, or reproduce it.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c8",
+      "quote": "The renderer steps $t = i / 30$ for $i = 0 \\ldots 1649$ and screenshots each frame, so the video is smooth however long a frame takes to draw.",
+      "kind": "number",
+      "number": 30,
+      "subject": "renderer fps",
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "A stated figure. A repo cannot prove it. Ask for the run that produced it, or reproduce it.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c9",
+      "quote": "The footage in the committed cut ran on the local test chain, which is why it plays on instinct and says so on the result screen.",
+      "kind": "other",
+      "number": null,
+      "subject": null,
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "Not something a repo can show.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c11",
+      "quote": "The plan route does reach them.",
+      "kind": "other",
+      "number": null,
+      "subject": "plan route reaches them",
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "Not something a repo can show.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c12",
+      "quote": "The run endpoint used to re-plan, which meant six more SERV calls before a coin moved, a model free to answer differently than it did on screen, and 68.9 seconds of a frozen \"Locked in\".",
+      "kind": "number",
+      "number": 68.9,
+      "subject": "frozen Locked in",
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "A stated figure. A repo cannot prove it. Ask for the run that produced it, or reproduce it.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c13",
+      "quote": "Forty one settled rounds on Base Sepolia, forty of them reconciled, counted on 21 September 2026.",
+      "kind": "number",
+      "number": 41,
+      "subject": "settled rounds",
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "A stated figure. A repo cannot prove it. Ask for the run that produced it, or reproduce it.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c14",
+      "quote": "On chain across those rounds: 150 entries, 7 payouts, 6 loans, 2 repayments, 1 seizure and 3 operator refills, every one of them a transaction with a hash.",
+      "kind": "number",
+      "number": 150,
+      "subject": "entries",
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "A stated figure. A repo cannot prove it. Ask for the run that produced it, or reproduce it.",
+      "evidence": [],
+      "by": "code"
+    }
+  ],
+  "counts": {
+    "verified": 3,
+    "unverified": 11,
+    "contradicted": 0
+  },
+  "stats": {
+    "commits": 232,
+    "commitsInWindow": 220,
+    "commitsBefore": 0,
+    "commitsAfter": 12,
+    "firstCommit": "2026-09-20T03:51:47Z",
+    "lastCommit": "2026-09-30T22:07:40Z",
+    "files": 450,
+    "testFiles": 164,
+    "testCases": 1696
+  },
+  "reader": {
+    "status": "ok",
+    "model": "gpt-5.4-mini",
+    "ms": 13747,
+    "guardTripped": false
+  },
+  "notes": [
+    "No write-up was pasted, so the README was read as the write-up.",
+    "160 files were skipped (binary, generated, lock files, or over 400 KB).",
+    "Commit dates come from git and can be set by the author. The repo creation date comes from GitHub and cannot."
+  ],
+  "recorded": true
+}

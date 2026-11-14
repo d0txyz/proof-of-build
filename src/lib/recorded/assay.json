@@ -1,0 +1,450 @@
+{
+  "repo": {
+    "owner": "OoJae",
+    "repo": "assay",
+    "url": "https://github.com/OoJae/assay",
+    "headSha": "256aa19a79d420f96de492a3a885da65e57ccc68",
+    "description": "Independent valuation-integrity audit for agents on Robinhood Chain. ERC-8056 corporate actions, oracle hygiene, byte-verified citations."
+  },
+  "ruleset": {
+    "id": "serv-01",
+    "name": "SERV Hackathon, Edition 01",
+    "start": "2026-09-14T00:00:00Z",
+    "end": "2026-09-28T23:59:59Z"
+  },
+  "declared": "unstated",
+  "checkedAt": "2026-11-14T11:41:56.066Z",
+  "rules": [
+    {
+      "id": "public",
+      "label": "Public repo",
+      "status": "pass",
+      "note": "Anyone can open it. License: MIT.",
+      "evidence": [
+        {
+          "label": "OoJae/assay",
+          "url": "https://github.com/OoJae/assay"
+        }
+      ]
+    },
+    {
+      "id": "window",
+      "label": "Built in the window",
+      "rule": "September 14 to 28, 2026.",
+      "status": "pass",
+      "note": "All 88 commits up to the deadline are dated inside the window. First commit Sep 20, 2026, last Sep 26, 2026.",
+      "evidence": [
+        {
+          "label": "Commits inside the window",
+          "url": "https://github.com/OoJae/assay/commits?since=2026-09-14&until=2026-09-28"
+        },
+        {
+          "label": "Repo created on GitHub: Sep 21, 2026",
+          "detail": "Set by GitHub. It cannot be backdated."
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "label": "Uses SERV Reasoning",
+      "rule": "Built on SERV Reasoning.",
+      "status": "pass",
+      "note": "Call sites found in 8 source files.",
+      "evidence": [
+        {
+          "label": "scripts/attest-respond.ts:204",
+          "url": "https://github.com/OoJae/assay/blob/256aa19a79d420f96de492a3a885da65e57ccc68/scripts/attest-respond.ts#L204",
+          "detail": "* to inference-api.openserv.ai under this account's data-collection setting."
+        },
+        {
+          "label": "src/adjudicate/serv.ts:20",
+          "url": "https://github.com/OoJae/assay/blob/256aa19a79d420f96de492a3a885da65e57ccc68/src/adjudicate/serv.ts#L20",
+          "detail": "export const SERV_BASE_URL = 'https://inference-api.openserv.ai/v1'"
+        },
+        {
+          "label": "scripts/injection-trials.ts:14",
+          "url": "https://github.com/OoJae/assay/blob/256aa19a79d420f96de492a3a885da65e57ccc68/scripts/injection-trials.ts#L14",
+          "detail": "* plain-LLM equivalent — `serv_prompt_guard`."
+        },
+        {
+          "label": "src/attest/index.ts:299",
+          "url": "https://github.com/OoJae/assay/blob/256aa19a79d420f96de492a3a885da65e57ccc68/src/attest/index.ts#L299",
+          "detail": "'serv_prompt_guard was enabled, and the output was checked before publication.',"
+        },
+        {
+          "label": "web/app/_components/serv-reasoning.tsx:33",
+          "url": "https://github.com/OoJae/assay/blob/256aa19a79d420f96de492a3a885da65e57ccc68/web/app/_components/serv-reasoning.tsx#L33",
+          "detail": "<span className=\"mono\">serv_prompt_guard</span>"
+        }
+      ]
+    },
+    {
+      "id": "demo",
+      "label": "Demo link or video",
+      "status": "pass",
+      "note": "All 4 links answer. This shows a page is up, not that the product works.",
+      "evidence": [
+        {
+          "label": "assay-steel.vercel.app/",
+          "url": "https://assay-steel.vercel.app/",
+          "detail": "A page answered."
+        },
+        {
+          "label": "assay-steel.vercel.app/wall#check",
+          "url": "https://assay-steel.vercel.app/wall#check",
+          "detail": "A page answered."
+        },
+        {
+          "label": "assay-steel.vercel.app/wall",
+          "url": "https://assay-steel.vercel.app/wall",
+          "detail": "A page answered."
+        },
+        {
+          "label": "basescan.org/tx/0x50124847a9228521b829e3b47a2b098f5688e57d147e33764232",
+          "url": "https://basescan.org/tx/0x50124847a9228521b829e3b47a2b098f5688e57d147e33764232c4c8f686b96b",
+          "detail": "A page answered."
+        }
+      ]
+    },
+    {
+      "id": "writeup",
+      "label": "Write-up covers what was asked",
+      "status": "pass",
+      "note": "Names its track (Open) and says how it uses SERV Reasoning.",
+      "evidence": []
+    },
+    {
+      "id": "secrets",
+      "label": "No secrets committed",
+      "status": "pass",
+      "note": "No key-shaped strings or filled .env files were found.",
+      "evidence": []
+    },
+    {
+      "id": "reviewer",
+      "label": "Written for people, not for an AI judge",
+      "status": "pass",
+      "note": "The README quotes an injection attempt as an example. It sits inside quotes or a code block, so it is not treated as aimed at the reviewer.",
+      "evidence": [
+        {
+          "label": "The quoted line",
+          "detail": "| prompt cache | Methodology in the stable system prompt = the same methodology every time, which is what makes a grade an attestation |"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "t1",
+      "quote": "pnpm test                     # all 541 tests in 29 files (20 of them, in 3 files, hit live chain state)",
+      "kind": "test_count",
+      "number": 541,
+      "subject": null,
+      "url": null,
+      "searchTerms": [],
+      "status": "verified",
+      "note": "Claims 541. Found about 502 test cases in 29 files, counted by pattern.",
+      "evidence": [
+        {
+          "label": "test/attest-unit.test.ts (49)",
+          "url": "https://github.com/OoJae/assay/blob/256aa19a79d420f96de492a3a885da65e57ccc68/test/attest-unit.test.ts"
+        },
+        {
+          "label": "test/wall-data.test.ts (41)",
+          "url": "https://github.com/OoJae/assay/blob/256aa19a79d420f96de492a3a885da65e57ccc68/test/wall-data.test.ts"
+        },
+        {
+          "label": "test/ratelimit.test.ts (39)",
+          "url": "https://github.com/OoJae/assay/blob/256aa19a79d420f96de492a3a885da65e57ccc68/test/ratelimit.test.ts"
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c2",
+      "quote": "Check a wallet, free:",
+      "kind": "live_link",
+      "number": null,
+      "subject": null,
+      "url": "https://assay-steel.vercel.app/wall#check",
+      "searchTerms": [],
+      "status": "verified",
+      "note": "A page answered at that address when checked. That shows it is up, not that it works.",
+      "evidence": [
+        {
+          "label": "assay-steel.vercel.app/wall#check",
+          "url": "https://assay-steel.vercel.app/wall#check",
+          "detail": "A page answered."
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c4",
+      "quote": "Buy the figures: the [$0.01 audited position](https://platform.openserv.ai/workspace/paywall/006ecd4add4a459d8ae92362869a42a6) and the [$0.25 contract audit](https://platform.openserv.ai/workspace/paywall/a1bb2a3946d1411eb945200d43ebc740), over x402 in USDC on Base, via OpenServ ",
+      "kind": "live_link",
+      "number": null,
+      "subject": "paid figures",
+      "url": "https://platform.openserv.ai/workspace/paywall/006ecd4add4a459d8ae92362869a42a6",
+      "searchTerms": [],
+      "status": "verified",
+      "note": "A page answered at that address when checked. That shows it is up, not that it works.",
+      "evidence": [
+        {
+          "label": "platform.openserv.ai/workspace/paywall/006ecd4add4a459d8ae92362869a42a",
+          "url": "https://platform.openserv.ai/workspace/paywall/006ecd4add4a459d8ae92362869a42a6",
+          "detail": "A page answered."
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c5",
+      "quote": "Built for SERV Hackathon Edition 01, entered in three tracks: *Mainnet & MCP* (\"Robinhood Chain / MCP\" on the form), *AgentKit* (\"Coinbase AgentKit\", for the [action provider](#mcp)) and *Open Track*.",
+      "kind": "built_in_window",
+      "number": 3,
+      "subject": "ASSAY",
+      "url": null,
+      "searchTerms": [],
+      "status": "verified",
+      "note": "All 88 commits up to the deadline are dated inside the window. First commit Sep 20, 2026, last Sep 26, 2026.",
+      "evidence": [
+        {
+          "label": "Commits inside the window",
+          "url": "https://github.com/OoJae/assay/commits?since=2026-09-14&until=2026-09-28"
+        },
+        {
+          "label": "Repo created on GitHub: Sep 21, 2026",
+          "detail": "Set by GitHub. It cannot be backdated."
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c3",
+      "quote": "Ask the MCP server:",
+      "kind": "live_link",
+      "number": null,
+      "subject": null,
+      "url": "https://sonar.my.id/assay-mcp/mcp",
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "The link could not be confirmed. Answered 405.",
+      "evidence": [
+        {
+          "label": "sonar.my.id/assay-mcp/mcp",
+          "url": "https://sonar.my.id/assay-mcp/mcp",
+          "detail": "Answered 405."
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c6",
+      "quote": "The fifth, [`0xb852b0f5…63e8`](https://basescan.org/tx/0xb852b0f5e0d9f7e789fe78bc3de223066aaf33a91d6f93f8039e4f7fe81e63e8) (the demo film's NVDA position), and the $0.25 settlement below paid the current payTo, `0x6328…7911`.",
+      "kind": "onchain",
+      "number": null,
+      "subject": "0xb852b0f5…63e8",
+      "url": "https://basescan.org/tx/0xb852b0f5e0d9f7e789fe78bc3de223066aaf33a91d6f93f8039e4f7fe81e63e8",
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "The explorer link opens. This tool does not read chains, so check the transaction yourself.",
+      "evidence": [
+        {
+          "label": "basescan.org/tx/0xb852b0f5e0d9f7e789fe78bc3de223066aaf33a91d6f93f8039e",
+          "url": "https://basescan.org/tx/0xb852b0f5e0d9f7e789fe78bc3de223066aaf33a91d6f93f8039e4f7fe81e63e8",
+          "detail": "A page answered."
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c7",
+      "quote": "agent **`8453:95374`** on the IdentityRegistry `0x8004A169…a432`",
+      "kind": "onchain",
+      "number": null,
+      "subject": "8453:95374",
+      "url": "https://basescan.org/tx/0x019ecbbcfe12f646d977c3a7d778d147d91cac9d6a348cc93a03be6d80e8356f",
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "The explorer link opens. This tool does not read chains, so check the transaction yourself.",
+      "evidence": [
+        {
+          "label": "basescan.org/tx/0x019ecbbcfe12f646d977c3a7d778d147d91cac9d6a348cc93a03",
+          "url": "https://basescan.org/tx/0x019ecbbcfe12f646d977c3a7d778d147d91cac9d6a348cc93a03be6d80e8356f",
+          "detail": "A page answered."
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c8",
+      "quote": "[`ERC8056Guard`](https://robinhoodchain.blockscout.com/address/0x674f9b0ec3c3643c1f51c0a40d4837932f9c1648) at `0x674f9b0ec3c3643c1f51c0a40d4837932f9c1648` on Robinhood Chain 4663",
+      "kind": "uses_tech",
+      "number": 4663,
+      "subject": "ERC8056Guard",
+      "url": "https://robinhoodchain.blockscout.com/address/0x674f9b0ec3c3643c1f51c0a40d4837932f9c1648",
+      "searchTerms": [
+        "ERC8056Guard",
+        "Robinhood",
+        "blockscout",
+        "Sourcify"
+      ],
+      "status": "unverified",
+      "note": "The reader pointed at a line that is not in the repo, so its answer was thrown out.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c9",
+      "quote": "**Verified as an exact match on [Sourcify](https://sourcify.dev/#/lookup/0x674f9b0ec3c3643c1f51c0a40d4837932f9c1648)** — creation and runtime bytecode, compiler settings and metadata identical to [`contracts/ERC8056Guard.sol`](contracts/ERC8056Guard.sol).",
+      "kind": "uses_tech",
+      "number": null,
+      "subject": "ERC8056Guard",
+      "url": "https://sourcify.dev/#/lookup/0x674f9b0ec3c3643c1f51c0a40d4837932f9c1648",
+      "searchTerms": [
+        "Sourcify",
+        "bytecode",
+        "solc",
+        "metadata"
+      ],
+      "status": "unverified",
+      "note": "The code mentions this, but no line was found that shows it being done.",
+      "evidence": [],
+      "by": "code"
+    },
+    {
+      "id": "c10",
+      "quote": "[`0xc192e7b9…bc3b2`](https://basescan.org/tx/0xc192e7b94cdd9b1ae4c77e4602f3fad75067b96b19fd24c6d5d2441a4febc3b2) — **0.25 USDC** for an `assay_check_contract`, `transferWithAuthorization`, buyer `0xDA31…d2cB` → `0x6328…7911`.",
+      "kind": "onchain",
+      "number": 0.25,
+      "subject": "0xc192e7b9…bc3b2",
+      "url": "https://basescan.org/tx/0xc192e7b94cdd9b1ae4c77e4602f3fad75067b96b19fd24c6d5d2441a4febc3b2",
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "The explorer link opens. This tool does not read chains, so check the transaction yourself.",
+      "evidence": [
+        {
+          "label": "basescan.org/tx/0xc192e7b94cdd9b1ae4c77e4602f3fad75067b96b19fd24c6d5d2",
+          "url": "https://basescan.org/tx/0xc192e7b94cdd9b1ae4c77e4602f3fad75067b96b19fd24c6d5d2441a4febc3b2",
+          "detail": "A page answered."
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c11",
+      "quote": "agent `95374` rated **CLEAN (100)** by its owner `0x6328…7911` ([request tx](https://basescan.org/tx/0x885769e81d7fb3218cf0e0659e57f1bac48469aabf950222023b14ecb47e7235), [response tx](https://basescan.org/tx/0x885d978810fbfccace75db1116897791483624c6ac68573fce96ef7a4dcaf1ee)) — `",
+      "kind": "onchain",
+      "number": 100,
+      "subject": "agent 95374",
+      "url": "https://basescan.org/tx/0x885769e81d7fb3218cf0e0659e57f1bac48469aabf950222023b14ecb47e7235",
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "The explorer link opens. This tool does not read chains, so check the transaction yourself.",
+      "evidence": [
+        {
+          "label": "basescan.org/tx/0x885769e81d7fb3218cf0e0659e57f1bac48469aabf950222023b",
+          "url": "https://basescan.org/tx/0x885769e81d7fb3218cf0e0659e57f1bac48469aabf950222023b14ecb47e7235",
+          "detail": "A page answered."
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c12",
+      "quote": "`assay_true_position` at $0.01 — `https://api.openserv.ai/webhooks/x402/trigger/006ecd4add4a459d8ae92362869a42a6` · [paywall](https://platform.openserv.ai/workspace/paywall/006ecd4add4a459d8ae92362869a42a6)",
+      "kind": "live_link",
+      "number": 0.01,
+      "subject": "assay_true_position",
+      "url": "https://api.openserv.ai/webhooks/x402/trigger/006ecd4add4a459d8ae92362869a42a6",
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "This link was not opened. A check opens at most ten links.",
+      "evidence": [
+        {
+          "label": "api.openserv.ai/webhooks/x402/trigger/006ecd4add4a459d8ae92362869a42a6",
+          "url": "https://api.openserv.ai/webhooks/x402/trigger/006ecd4add4a459d8ae92362869a42a6"
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c13",
+      "quote": "`assay_check_contract` at $0.25 — `https://api.openserv.ai/webhooks/x402/trigger/a1bb2a3946d1411eb945200d43ebc740` · [paywall](https://platform.openserv.ai/workspace/paywall/a1bb2a3946d1411eb945200d43ebc740)",
+      "kind": "live_link",
+      "number": 0.25,
+      "subject": "assay_check_contract",
+      "url": "https://api.openserv.ai/webhooks/x402/trigger/a1bb2a3946d1411eb945200d43ebc740",
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "This link was not opened. A check opens at most ten links.",
+      "evidence": [
+        {
+          "label": "api.openserv.ai/webhooks/x402/trigger/a1bb2a3946d1411eb945200d43ebc740",
+          "url": "https://api.openserv.ai/webhooks/x402/trigger/a1bb2a3946d1411eb945200d43ebc740"
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c14",
+      "quote": "`https://sonar.my.id/assay-mcp/sse` (SSE) — **TLS**, verified from the public internet with real MCP clients — and, from this release, `https://sonar.my.id/assay-mcp/mcp` (Streamable HTTP); the cleartext `:7379` it was previously published on is now closed.",
+      "kind": "live_link",
+      "number": null,
+      "subject": "Public MCP",
+      "url": "https://sonar.my.id/assay-mcp/sse",
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "This link was not opened. A check opens at most ten links.",
+      "evidence": [
+        {
+          "label": "sonar.my.id/assay-mcp/sse",
+          "url": "https://sonar.my.id/assay-mcp/sse"
+        }
+      ],
+      "by": "code"
+    },
+    {
+      "id": "c1",
+      "quote": "Independent valuation-integrity audit for agents moving money on Robinhood Chain (EIP-155 4663).",
+      "kind": "other",
+      "number": null,
+      "subject": "ASSAY",
+      "url": null,
+      "searchTerms": [],
+      "status": "unverified",
+      "note": "Not something a repo can show.",
+      "evidence": [],
+      "by": "code"
+    }
+  ],
+  "counts": {
+    "verified": 4,
+    "unverified": 11,
+    "contradicted": 0
+  },
+  "stats": {
+    "commits": 88,
+    "commitsInWindow": 88,
+    "commitsBefore": 0,
+    "commitsAfter": 0,
+    "firstCommit": "2026-09-20T22:38:30Z",
+    "lastCommit": "2026-09-26T21:03:02Z",
+    "files": 265,
+    "testFiles": 29,
+    "testCases": 502
+  },
+  "reader": {
+    "status": "ok",
+    "model": "gpt-5.4-mini",
+    "ms": 25230,
+    "guardTripped": false
+  },
+  "notes": [
+    "No write-up was pasted, so the README was read as the write-up.",
+    "25 files were skipped (binary, generated, lock files, or over 400 KB).",
+    "Commit dates come from git and can be set by the author. The repo creation date comes from GitHub and cannot."
+  ],
+  "recorded": true
+}
